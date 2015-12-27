@@ -31,15 +31,8 @@ App = React.createClass({
       	<div className="container">
       		<h1 className="text-center">Movies</h1>
       	</div>
-      	<div className="container">
-      		<AddMovieForm />
-      	</div>
         <div className="container">
-        	<div className="heading">
-				<div className="col-xs-6"><strong>Title</strong></div>
-				<div className="col-xs-6 text-right"><strong>Avg. Rating</strong></div>
-            </div>
-            <MovieList />
+            {this.props.children}
         </div>
       </div>
     );

@@ -24,3 +24,6 @@ meteorhacks:npm
 
 
 npm-container
+reactrouter:react-router
+accounts-ui
+accounts-password
