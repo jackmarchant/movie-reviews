@@ -33,6 +33,31 @@ MovieItem = React.createClass({
 	},
 	
 	/**
+	 * Check if a user is logged in
+	 * @return {bool}
+	 */
+	loggedInUser() {
+		return (Meteor.userId()) ? true : false;
+	},
+	
+	/**
+	 * Render actions for this movie item
+	 * @return {object} html
+	 */
+	renderActions() {
+		if (this.loggedInUser()) {
+			return (
+				<div className="actions">
+					<button onClick={this.addRating} className="btn btn-success">Add Rating</button>
+					<button onClick={this.removeMovie} className="btn btn-danger">Remove Movie</button>
+				</div>
+			);
+		} else {
+			return null;
+		}
+	},
+	
+	/**
 	 * Render this component
 	 * @return object html
 	 */
@@ -46,10 +71,7 @@ MovieItem = React.createClass({
 				<div className="rating">
 					{this.renderVotes()}
 				</div>
-				<div className="actions">
-					<button onClick={this.addRating} className="btn btn-success">Add Rating</button>
-					<button onClick={this.removeMovie} className="btn btn-danger">Remove Movie</button>
-				</div>
+				{ this.renderActions() }
 			</li>
 		);
 	}
