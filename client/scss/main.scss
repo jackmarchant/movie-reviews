@@ -14,8 +14,6 @@
 		min-width: 280px;
 		max-width:500px;
 		margin:1em auto;
-		transition: all 500ms ease;
-		box-sizing: border-box;
 	}
 	.title, .rating {
 		display: inline-block;
@@ -25,12 +23,6 @@
 	.rating {
 		text-align: right;
 	}
-	.remove {
-	    cursor: pointer;
-	    position: absolute;
-	    right: 5px;
-	    top: 5px;
-	}
 	.actions {
 		clear:both;
 		position: relative;
@@ -38,15 +30,21 @@
 		padding-bottom:10px;
 		width: 100%;
 		button {
-			width:100%;
-			background-color:#333A50;
 			color:#fff;
 			font-weight: bold;
 			border:0;
 			cursor:pointer;
+			font-size: 12px;
 			@include border-radius(2px);
+			&.btn-danger {
+				float:right;
+			}
 		}
 	}
+}
+
+.container.no-padding-left {
+	padding-left:0;
 }
 
 .heading {
@@ -56,7 +54,6 @@
 }
 
 .message {
-    border: 2px solid;
     background: #f6f7f7;
     padding: 1em;
     font-weight: bold;
